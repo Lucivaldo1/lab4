@@ -1,0 +1,18 @@
+wl = linspace(1500e-9, 1600e-9, 100);
+
+neff = matrix(1, length(wl));
+neff2 = matrix(1, length(wl));
+neff3 = matrix(1, length(wl));
+neff4 = matrix(1, length(wl));
+
+for(i=1:length(wl)){
+    findmodes;
+    neff(i) = real(getdata("mode1", "neff"));
+    neff2(i) = real(getdata("mode2", "neff"));
+    neff3(i) = real(getdata("mode3", "neff"));
+    neff4(i) = real(getdata("mode4", "neff"));    
+    
+    }
+    
+    
+plot(wl,neff,neff2,neff3,neff4);
